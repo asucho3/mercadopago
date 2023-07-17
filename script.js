@@ -8,7 +8,12 @@ app.use(
     origin: "https://pizzasuch.netlify.app",
   })
 );
-app.options("*", cors());
+app.options(
+  "*",
+  cors({
+    origin: "https://pizzasuch.netlify.app",
+  })
+);
 
 //body parser
 app.use(express.json());
