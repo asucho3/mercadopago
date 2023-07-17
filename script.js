@@ -23,7 +23,6 @@ app.use((req, res, next) => {
     "TEST-2421207288296147-071212-c351e728c659f3bef0f9ec86bf9003dd-98574482"
   );
 
-  console.log(req.body);
   mercadopago.payment
     .save(req.body)
     .then(function (response) {
