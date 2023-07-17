@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-
+console.log(req);
 // app.use(
 //   cors({
 //     origin: "https://pizzasuch.netlify.app",
@@ -16,6 +16,7 @@ const app = express();
 // );
 
 app.use(function (req, res, next) {
+  console.log(req);
   const allowedOrigins = [
     "http://localhost:5173",
     "https://mercadopago-szea.onrender.com",
