@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://mercadopago-szea.onrender.com",
+    origin: "https://pizzasuch.netlify.app",
     credentials: true,
   })
 );
