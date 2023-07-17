@@ -56,4 +56,6 @@ app.use((req, res, next) => {
     });
 });
 
-app.listen("10000", () => console.log("listening"));
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log("listening"));
