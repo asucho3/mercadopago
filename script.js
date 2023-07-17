@@ -14,6 +14,8 @@ app.use(
   })
 );
 
+app.options("*", cors());
+
 //body parser
 app.use(express.json());
 
