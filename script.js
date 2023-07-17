@@ -3,36 +3,17 @@ const cors = require("cors");
 
 const app = express();
 console.log(req);
-// app.use(
-//   cors({
-//     origin: "https://pizzasuch.netlify.app",
-//   })
-// );
-// app.options(
-//   "*",
-//   cors({
-//     origin: "https://pizzasuch.netlify.app",
-//   })
-// );
 
-app.use(function (req, res, next) {
-  console.log(req);
-  const allowedOrigins = [
-    "http://localhost:5173",
-    "https://mercadopago-szea.onrender.com",
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
-  next();
-});
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://mercadopago-szea.onrender.com",
+    ],
+    credentials: true,
+  })
+);
 
 //body parser
 app.use(express.json());
