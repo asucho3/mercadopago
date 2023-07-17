@@ -14,7 +14,10 @@ const app = express();
 
 // Set middleware of CORS
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://pizzasuch.netlify.app");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://pizzasuch.netlify.app/order/pay"
+  );
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
