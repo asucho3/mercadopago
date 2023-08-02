@@ -43,9 +43,13 @@ app.use((req, res, next) => {
       data: "bogus",
     });
   }
+  next();
 });
 
 app.use((req, res, next) => {
+  // guard clause
+  if (req.body.bogus === "bogus") return;
+
   var mercadopago = require("mercadopago");
   mercadopago.configurations.setAccessToken(
     "TEST-2421207288296147-071212-c351e728c659f3bef0f9ec86bf9003dd-98574482"
