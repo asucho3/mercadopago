@@ -37,6 +37,15 @@ app.options("*", cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
+  if (req.body.bogus === "bogus") {
+    res.status(200).json({
+      status: "success",
+      data: "bogus",
+    });
+  }
+});
+
+app.use((req, res, next) => {
   var mercadopago = require("mercadopago");
   mercadopago.configurations.setAccessToken(
     "TEST-2421207288296147-071212-c351e728c659f3bef0f9ec86bf9003dd-98574482"
