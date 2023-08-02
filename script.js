@@ -49,6 +49,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   // guard clause
   if (req.body.bogus === "bogus") return;
+  console.log(req.body);
 
   var mercadopago = require("mercadopago");
   mercadopago.configurations.setAccessToken(
